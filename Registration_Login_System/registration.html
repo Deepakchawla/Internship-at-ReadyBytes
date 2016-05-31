@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Javascript_Bootstrap/jquery/dist/jquery.min.js"></script>
+    <script src="Javascript_Bootstrap/parsleyjs/i18n/en.js"></script>
+    <script src="Javascript_Bootstrap/form.js"></script>
+    <link rel="stylesheet" href="Javascript_Bootstrap/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="col-lg-8">
+        <h2>Registration Form</h2>
+        <form data-parsley-validate="" action="registration.php" method="post">
+            <div class="form-group">
+                <label for="exampleInputfullname">Full Name</label>
+                <input type="text" class="form-control"  placeholder="Full Name" data-parsley-required="true" name="fname">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control"  placeholder="Email" data-parsley-required="true"	 data-parsley-type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">Password</label>
+                <input type="password" id="password" class="form-control"  data-parsley-type="alphanum" placeholder="Password" data-parsley-required="true"	 data-parsley-minlength="6" data-parsley-maxlength="20" name="password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">Confirm Password</label>
+                <input type="password" class="form-control"  data-parsley-equalto="#password" placeholder="Confirm Password" data-parsley-required="true"	 data-parsley-minlength="6" data-parsley-maxlength="20">
+            </div>
+            <label>Gender</label><br>
+            <div class="radio-inline">
+                <input type="radio" name="gender" value="male" data-parsley-required="true"	>Male
+            </div>
+            <div class="radio-inline">
+                <input type="radio" name="gender" value="female">Female
+            </div>
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth" data-parsley-required="" name="dob">
+            </div>
+            <input type="hidden" value="task" name="controller">
+            <input type="hidden" value="register" name="function">
+            <button type="submit" class="btn btn-primary">SignUp</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
